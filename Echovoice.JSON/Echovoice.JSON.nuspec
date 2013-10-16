@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Echovoice.JSON</id>
+    <version>$version$</version>
+    <title>Echovoice JSON Array Utilities</title>
+    <authors>Echovoice</authors>
+    <owners>echovoice,artfulhacker</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/echovoice/Echovoice.JSON</projectUrl>
+    <licenseUrl>https://github.com/echovoice/Echovoice.JSON/blob/master/LICENSE</licenseUrl>
+    <description>Echovoice JSON Array Encode, Decode and Pretty methods.</description>
+    <releaseNotes>This is the initial commit, borrowed from public WS3V Lib.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <language>en-US</language>
+    <tags>Echovoice JSON JSONArray Encode Decode</tags>
+  </metadata>
+  <files>
+    <file src="Echovoice.JSON.dll" target="lib" />
+    <file src="Echovoice.JSON.pdb" target="lib" />
+  </files>
+</package>

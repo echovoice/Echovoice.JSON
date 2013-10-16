@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echovoice.JSON", "Echovoice.JSON\Echovoice.JSON.csproj", "{9C619633-B450-4213-BA8B-419981938343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echovoice.JSON.Tests", "Echovoice.JSON.Tests\Echovoice.JSON.Tests.csproj", "{9ACBDA42-49E4-4934-871E-D612A132DF37}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tf001:8080/tfs/echovoice%20development
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Echovoice.JSON\\Echovoice.JSON.csproj
+		SccProjectName1 = Echovoice.JSON
+		SccLocalPath1 = Echovoice.JSON
+		SccProjectUniqueName2 = Echovoice.JSON.Tests\\Echovoice.JSON.Tests.csproj
+		SccProjectName2 = Echovoice.JSON.Tests
+		SccLocalPath2 = Echovoice.JSON.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C619633-B450-4213-BA8B-419981938343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C619633-B450-4213-BA8B-419981938343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C619633-B450-4213-BA8B-419981938343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C619633-B450-4213-BA8B-419981938343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACBDA42-49E4-4934-871E-D612A132DF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACBDA42-49E4-4934-871E-D612A132DF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACBDA42-49E4-4934-871E-D612A132DF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACBDA42-49E4-4934-871E-D612A132DF37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
