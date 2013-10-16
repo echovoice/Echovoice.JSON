@@ -1,4 +1,4 @@
-Echovoice.JSON
+Echovoice.JSON ![project-status](http://stillmaintained.com/echovoice/Echovoice.JSON.png)
 ==============
 
 Echovoice JSON Array Encode, Decode and Pretty methods. Used internally until the public release of [WS3V](http://ws3v.org).
