@@ -51,19 +51,6 @@
     <Compile Include="JSONDecoders.cs" />
     <Compile Include="JSONEncoders.cs" />
     <Compile Include="Pretty\JSONPretty.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\ICharacterStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\CloseBracketStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\CloseSquareBracketStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\ColonCharacterStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\CommaCharacterStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\DefaultCharacterStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\DoubleQuoteStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\OpenBracketStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\OpenSquareBracketStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\SingleQuoteStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategies\SkipWhileNotInStringStrategy.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\JsonPPStrategyContext.cs" />
-    <Compile Include="Pretty\JSONPrettyInternals\PPScopeState.cs" />
     <Compile Include="Pretty\PrettyExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

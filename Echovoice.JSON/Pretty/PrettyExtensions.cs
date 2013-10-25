@@ -1,5 +1,4 @@
-﻿using Echovoice.JSON.Pretty.JSONPrettyInternals;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +13,15 @@ namespace Echovoice.JSON.Pretty
     {
         public static string PrettyPrintJson(this string unprettyJson)
         {
-            var pp = new JSONPretty(new JsonPPStrategyContext());
+            return JSONPretty.FormatJson(unprettyJson);
+        }
 
-            return pp.PrettyPrint(unprettyJson);
+        public static void ForEach<T>(this IEnumerable<T> ie, Action<T> action)
+        {
+            foreach (var i in ie)
+            {
+                action(i);
+            }
         }
     }
 }

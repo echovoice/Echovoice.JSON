@@ -66,8 +66,7 @@
   <ItemGroup>
     <Compile Include="JSONDecodeTests.cs" />
     <Compile Include="JSONEncodeTests.cs" />
-    <Compile Include="JSONPrettyBehavior.cs" />
-    <Compile Include="JSONPrettyTestObjects.cs" />
+    <Compile Include="JSONPrettyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,10 +77,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="TestFiles\jsonLintBeautifyExample.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="TestFiles\example.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
