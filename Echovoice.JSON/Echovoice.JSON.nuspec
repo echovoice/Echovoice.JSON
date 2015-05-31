@@ -11,12 +11,13 @@
     <licenseUrl>https://github.com/echovoice/Echovoice.JSON/blob/master/LICENSE</licenseUrl>
     <description>Echovoice JSON Array Encode, Decode and Pretty methods.</description>
     <releaseNotes>Simplified pretty methods.</releaseNotes>
-    <copyright>Copyright 2013</copyright>
+    <copyright>Copyright 2015</copyright>
     <language>en-US</language>
     <tags>Echovoice JSON JSONArray Encode Decode</tags>
   </metadata>
   <files>
     <file src="Echovoice.JSON.dll" target="lib" />
     <file src="Echovoice.JSON.pdb" target="lib" />
+    <file src="Echovoice.JSON.xml" target="lib" />
   </files>
 </package>
