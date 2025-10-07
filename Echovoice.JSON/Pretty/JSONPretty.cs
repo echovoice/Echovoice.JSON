@@ -9,9 +9,18 @@ using System.Threading.Tasks;
 
 namespace Echovoice.JSON.Pretty
 {
+    /// <summary>
+    /// Provides JSON pretty printing functionality with proper indentation.
+    /// </summary>
     public class JSONPretty
     {
         private const string INDENT_STRING = "    ";
+        
+        /// <summary>
+        /// Formats a JSON string with proper indentation for readability.
+        /// </summary>
+        /// <param name="str">The JSON string to format</param>
+        /// <returns>A formatted JSON string with proper indentation</returns>
         public static string FormatJson(string str)
         {
             var indent = 0;
