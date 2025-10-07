@@ -15,7 +15,7 @@
     <Product>Echovoice.JSON</Product>
     <Description>Lightweight JSON array encoder/decoder library for .NET. Provides simple, fast JSON array encoding and decoding without complex object mapping.</Description>
     <Copyright>Copyright © Echovoice 2025</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/echovoice/Echovoice.JSON</PackageProjectUrl>
     <RepositoryUrl>https://github.com/echovoice/Echovoice.JSON</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

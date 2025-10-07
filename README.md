@@ -2,8 +2,8 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Echovoice.JSON.svg)](https://www.nuget.org/packages/Echovoice.JSON/)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
-[![Code Coverage](https://img.shields.io/badge/coverage-98.3%25-brightgreen.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Code Coverage](https://img.shields.io/badge/coverage-98.31%25-brightgreen.svg)]()
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg)]()
 
 A lightweight, high-performance JSON array encoder/decoder library for .NET. Provides simple, fast JSON array encoding and decoding without complex object mapping.
@@ -14,7 +14,7 @@ A lightweight, high-performance JSON array encoder/decoder library for .NET. Pro
 - 📦 **Multi-Platform Support** - Targets .NET Framework 4.5, .NET Standard 2.0, .NET 6.0, .NET 8.0, and .NET 9.0
 - 🎯 **Simple API** - Easy-to-use static methods for encoding and decoding
 - 🔧 **Array-Focused** - Specialized for JSON array operations
-- ✅ **Well-Tested** - 98.3% code coverage with comprehensive unit tests using MSTest
+- ✅ **Well-Tested** - 98.31% code coverage with comprehensive unit tests using MSTest
 - 📝 **Pretty Printing** - Built-in JSON formatting with proper indentation
 - 🔒 **No External Dependencies** - Pure .NET implementation with no third-party packages
 - 📏 **Tiny Package** - Only 37KB package size
@@ -208,10 +208,10 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ## 📊 Code Coverage
 
-Current code coverage: **97.1%**
+Current code coverage: **98.31%**
 
-- Line coverage: 97.1% (173/178)
-- Branch coverage: 96.5% (167/173)
+- Line coverage: 98.31% (175/178)
+- Branch coverage: 97.71% (169/173)
 - Method coverage: 100% (12/12)
 
 ## 🤝 Contributing
@@ -226,7 +226,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Credits
 
