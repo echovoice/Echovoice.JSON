@@ -1,20 +1,19 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using FluentAssertions;
 
 namespace Echovoice.JSON.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class JSONDecodeTests
     {
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
 
         }
 
-        [Test]
+        [TestMethod]
         public void DecodeJSONArray()
         {
             string input = "[3,\"gew8u3rethex\",1,\"Example 0.9.6\",[30,60,true],[1,true,true,true,\"250K\",\"50M\"],true,true,120,{\"api_day_quota\": 1000,\"api_day_reset\": 41268740,\"api_day_used\": 153,\"api_hour_quota\": 100,\"api_hour_reset\": 41267360,\"api_hour_used\": 15,\"sample_feature_1\": true,\"sample_feature_2\": false}]";
@@ -32,7 +31,7 @@ namespace Echovoice.JSON.Tests
             result[9].Should().Be("{\"api_day_quota\": 1000,\"api_day_reset\": 41268740,\"api_day_used\": 153,\"api_hour_quota\": 100,\"api_hour_reset\": 41267360,\"api_hour_used\": 15,\"sample_feature_1\": true,\"sample_feature_2\": false}");
         }
 
-        [Test]
+        [TestMethod]
         public void DecodeComplexJSONArray()
         {
             string input = "[14,4,[14,\"data\"],[[5,\"10.186.122.15\"],[6,\"10.186.122.16\"]]]";
@@ -50,7 +49,7 @@ namespace Echovoice.JSON.Tests
             result[1].Should().Be("[6,\"10.186.122.16\"]");
         }
 
-        [Test]
+        [TestMethod]
         public void DecodeJsStringArray()
         {
             string input = "[\"philcollins\",\"Ih8PeterG\"]";
@@ -60,14 +59,14 @@ namespace Echovoice.JSON.Tests
             result[1].Should().Be("Ih8PeterG");
         }
 
-        [Test]
+        [TestMethod]
         public void DecodeJsString()
         {
             string result = JSONDecoders.DecodeJsString("\"\\u003Cb\\u003Esco\\u003C\\/b\\u003E\"");
             result.Should().Be("<b>sco</b>");
         }
 
-        [Test]
+        [TestMethod]
         public void DecodeSliceExtensions()
         {
             string s = "0123456789_";
@@ -80,7 +79,7 @@ namespace Echovoice.JSON.Tests
             s.Slice(1, -3).Should().Be("1234567");
         }
 
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
 

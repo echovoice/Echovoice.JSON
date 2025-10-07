@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using FluentAssertions;
 using System.Text;
 using System.Collections.Generic;
@@ -8,16 +7,16 @@ using System.IO;
 
 namespace Echovoice.JSON.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class JSONEncodeTests
     {
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
 
         }
 
-        [Test]
+        [TestMethod]
         public void EncodeJsString()
         {
             string result = JSONEncoders.EncodeJsString("<b>sco</b>");
@@ -27,21 +26,21 @@ namespace Echovoice.JSON.Tests
             result.Should().Be("\"\\\\\\b\\f\\n\\r\\t\"");
         }
 
-        [Test]
+        [TestMethod]
         public void EncodeObjectArrayFromString()
         {
             string result = JSONEncoders.EncodeJsObjectArray(new string[] {"[\"mike\"]", "was", "here"});
             result.Should().Be("[[\"mike\"],was,here]");
         }
 
-        [Test]
+        [TestMethod]
         public void EncodeStringArrayFromString()
         {
             string result = JSONEncoders.EncodeJsStringArray(new string[] { "[\"mike\"]", "was", "here" });
             result.Should().Be("[\"[\\\"mike\\\"]\",\"was\",\"here\"]");
         }
 
-        [Test]
+        [TestMethod]
         public void EncodeObjectArray()
         {
             dummyObject[] dummys = new dummyObject[2];
@@ -55,7 +54,7 @@ namespace Echovoice.JSON.Tests
             result.Should().Be("[[29,\"mike\"],[5,\"dummy\"]]");
         }
 
-        [Test]
+        [TestMethod]
         public void EncodeObjectList()
         {
             List<dummyObject> dummys = new List<dummyObject>(2);
@@ -70,7 +69,7 @@ namespace Echovoice.JSON.Tests
             result.Should().Be("[[29,\"mike\"],[5,\"dummy\"]]");
         }
 
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
 

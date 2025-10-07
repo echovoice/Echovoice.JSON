@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Echovoice.JSON")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Lightweight JSON array encoder/decoder library for .NET. Provides simple, fast JSON array encoding and decoding without complex object mapping.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Echovoice")]
 [assembly: AssemblyProduct("Echovoice.JSON")]
-[assembly: AssemblyCopyright("Copyright © 2015")]
+[assembly: AssemblyCopyright("Copyright © Echovoice 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

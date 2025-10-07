@@ -1,0 +1,23 @@
+{
+	"dotnet.preferCSharpExtension": true,
+	"workbench.colorCustomizations": {
+		"activityBar.activeBackground": "#32cb2d",
+		"activityBar.background": "#32cb2d",
+		"activityBar.foreground": "#15202b",
+		"activityBar.inactiveForeground": "#15202b99",
+		"activityBarBadge.background": "#6266dc",
+		"activityBarBadge.foreground": "#e7e7e7",
+		"commandCenter.border": "#e7e7e799",
+		"sash.hoverBorder": "#32cb2d",
+		"statusBar.background": "#28a124",
+		"statusBar.foreground": "#e7e7e7",
+		"statusBarItem.hoverBackground": "#32cb2d",
+		"statusBarItem.remoteBackground": "#28a124",
+		"statusBarItem.remoteForeground": "#e7e7e7",
+		"titleBar.activeBackground": "#28a124",
+		"titleBar.activeForeground": "#e7e7e7",
+		"titleBar.inactiveBackground": "#28a12499",
+		"titleBar.inactiveForeground": "#e7e7e799"
+	},
+	"peacock.color": "#28a124"
+}

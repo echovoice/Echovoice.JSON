@@ -1,14 +1,25 @@
-﻿using System;
+﻿#if NET45
+#nullable disable
+#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+#endif
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Echovoice.JSON
 {
+    /// <summary>
+    /// Provides methods for encoding C# objects and arrays into JSON format.
+    /// </summary>
     public static class JSONEncoders
     {
-        public static string EncodeJsStringArray(string[] s)
+        /// <summary>
+        /// Encodes an array of strings into a JSON array format.
+        /// Each string is properly escaped.
+        /// </summary>
+        /// <param name="s">The array of strings to encode.</param>
+        /// <returns>A JSON-formatted array string.</returns>
+        public static string EncodeJsStringArray(string[]? s)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append('[');
@@ -32,8 +43,7 @@ namespace Echovoice.JSON
         /// </summary>
         /// <param name="s">Array of strings already encoded</param>
         /// <returns>String in JSON format</returns>
-        
-        public static string EncodeJsObjectArray(string[] s)
+        public static string EncodeJsObjectArray(string[]? s)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append('[');
@@ -57,8 +67,7 @@ namespace Echovoice.JSON
         /// </summary>
         /// <param name="s">List of objects to be encoded into a JSON array</param>
         /// <returns>String in JSON Array format</returns>
-
-        public static string EncodeJsObjectList<T>(List<T> s)
+        public static string EncodeJsObjectList<T>(List<T>? s)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append('[');
@@ -69,7 +78,7 @@ namespace Echovoice.JSON
                     if (i > 0)
                         sb.Append(',');
 
-                    sb.Append(s[i].ToString());
+                    sb.Append(s[i]?.ToString());
                 }
             }
             sb.Append(']');
@@ -82,8 +91,7 @@ namespace Echovoice.JSON
         /// </summary>
         /// <param name="s">Array of objects to be encoded into a JSON array</param>
         /// <returns>String in JSON Array format</returns>
-
-        public static string EncodeJsObjectArray(object[] s)
+        public static string EncodeJsObjectArray(object[]? s)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append('[');
@@ -103,10 +111,6 @@ namespace Echovoice.JSON
         }
 
 
-        /// Credit http://www.west-wind.com/weblog/posts/2007/Jul/14/Embedding-JavaScript-Strings-from-an-ASPNET-Page
-        /// 
-        /// Edited to add reverse solidus
-        /// 
         /// <summary>
         /// Encodes a string to be represented as a string literal. The format
         /// is essentially a JSON string.
@@ -114,9 +118,8 @@ namespace Echovoice.JSON
         /// The string returned includes outer quotes 
         /// Example Output: "Hello \"Mike\"!\r\nYou're the best coder in the world"
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
-
+        /// <param name="s">The string to encode.</param>
+        /// <returns>A JSON-formatted string with surrounding quotes and proper escaping.</returns>
         public static string EncodeJsString(string s)
         {
             StringBuilder sb = new StringBuilder(s.Length);

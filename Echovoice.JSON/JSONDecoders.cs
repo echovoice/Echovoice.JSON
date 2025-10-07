@@ -1,13 +1,23 @@
-﻿using System;
+﻿#if NET45
+#nullable disable
+#endif
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Echovoice.JSON
 {
+    /// <summary>
+    /// Provides methods for decoding JSON arrays into string arrays.
+    /// </summary>
     public static class JSONDecoders
     {
+        /// <summary>
+        /// Decodes a complex JSON array into a string array.
+        /// Supports nested arrays and objects.
+        /// </summary>
+        /// <param name="s">The JSON array string to decode.</param>
+        /// <returns>An array of strings representing the top-level elements.</returns>
         public static string[] DecodeJSONArray(string s)
         {
             List<string> strings = new List<string>();
@@ -85,6 +95,11 @@ namespace Echovoice.JSON
             return strings.ToArray();
         }
 
+        /// <summary>
+        /// Decodes a simple JSON string array into a string array.
+        /// </summary>
+        /// <param name="s">The JSON string array to decode.</param>
+        /// <returns>An array of decoded strings.</returns>
         public static string[] DecodeJsStringArray(string s)
         {
             List<string> strings = new List<string>();
@@ -130,6 +145,11 @@ namespace Echovoice.JSON
             return strings.ToArray();
         }
 
+        /// <summary>
+        /// Decodes a JSON-encoded string, handling escape sequences and Unicode characters.
+        /// </summary>
+        /// <param name="s">The JSON-encoded string to decode (including surrounding quotes).</param>
+        /// <returns>The decoded string without quotes.</returns>
         public static string DecodeJsString(string s)
         {
             StringBuilder sb = new StringBuilder(s.Length);
@@ -157,6 +177,9 @@ namespace Echovoice.JSON
         }
     }
 
+    /// <summary>
+    /// String extension methods for JSON decoding operations.
+    /// </summary>
     public static class Extensions
     {
         /// Credit http://www.dotnetperls.com/string-slice

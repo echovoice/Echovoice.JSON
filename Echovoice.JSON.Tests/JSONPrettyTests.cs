@@ -1,16 +1,16 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Echovoice.JSON.Pretty;
 using System.IO;
+using Echovoice.JSON.Pretty;
 
 namespace Echovoice.JSON.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class JSONPrettyTests
     {
         private static readonly string NewLine = Environment.NewLine;
@@ -18,7 +18,7 @@ namespace Echovoice.JSON.Tests
         private readonly string _complexPrettyPrintArrayInObjectExample = "{\"CreatedDate\": \"\\/Date(1262329200000)\\/\",\"Id\": \"7df51e04-ca58-4804-82f6-e0af2f1d5265\",\"Names\": [\"One\",\"Two\",\"Three\"]}";
         private readonly string _basicPrettyPrintArrayInObjectExample = "[4,5,2,1]";
 
-        [Test]
+        [TestMethod]
         public void testComplexPretty()
         {
             _complexPrettyPrintArrayInObjectExample.PrettyPrintJson().Should().Be
@@ -33,10 +33,10 @@ namespace Echovoice.JSON.Tests
             "}");
         }
 
-        [Test]
+        [TestMethod]
         public void testBasicPretty()
         {
-            string complexTestString = File.ReadAllText("TestFiles\\example.json");
+            string complexTestString = File.ReadAllText(Path.Combine("TestFiles", "example.json"));
 
             _basicPrettyPrintArrayInObjectExample.PrettyPrintJson().Should().Be(complexTestString);
         }
