@@ -14,9 +14,10 @@ A lightweight, high-performance JSON array encoder/decoder library for .NET. Pro
 - 📦 **Multi-Platform Support** - Targets .NET Framework 4.5, .NET Standard 2.0, .NET 6.0, .NET 8.0, and .NET 9.0
 - 🎯 **Simple API** - Easy-to-use static methods for encoding and decoding
 - 🔧 **Array-Focused** - Specialized for JSON array operations
-- ✅ **Well-Tested** - 98.3% code coverage with comprehensive unit tests
+- ✅ **Well-Tested** - 98.3% code coverage with comprehensive unit tests using MSTest
 - 📝 **Pretty Printing** - Built-in JSON formatting with proper indentation
 - 🔒 **No External Dependencies** - Pure .NET implementation with no third-party packages
+- 📏 **Tiny Package** - Only 37KB package size
 
 ## 🚀 Installation
 

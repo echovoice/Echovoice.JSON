@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentAssertions;
 using System.Text;
 using System.Collections.Generic;
 using System.IO;
@@ -20,24 +19,24 @@ namespace Echovoice.JSON.Tests
         public void EncodeJsString()
         {
             string result = JSONEncoders.EncodeJsString("<b>sco</b>");
-            result.Should().Be("\"\\u003Cb\\u003Esco\\u003C\\/b\\u003E\"");
+            Assert.AreEqual("\"\\u003Cb\\u003Esco\\u003C\\/b\\u003E\"", result);
 
             result = JSONEncoders.EncodeJsString("\\\b\f\n\r\t");
-            result.Should().Be("\"\\\\\\b\\f\\n\\r\\t\"");
+            Assert.AreEqual("\"\\\\\\b\\f\\n\\r\\t\"", result);
         }
 
         [TestMethod]
         public void EncodeObjectArrayFromString()
         {
             string result = JSONEncoders.EncodeJsObjectArray(new string[] {"[\"mike\"]", "was", "here"});
-            result.Should().Be("[[\"mike\"],was,here]");
+            Assert.AreEqual("[[\"mike\"],was,here]", result);
         }
 
         [TestMethod]
         public void EncodeStringArrayFromString()
         {
             string result = JSONEncoders.EncodeJsStringArray(new string[] { "[\"mike\"]", "was", "here" });
-            result.Should().Be("[\"[\\\"mike\\\"]\",\"was\",\"here\"]");
+            Assert.AreEqual("[\"[\\\"mike\\\"]\",\"was\",\"here\"]", result);
         }
 
         [TestMethod]
@@ -51,7 +50,7 @@ namespace Echovoice.JSON.Tests
             dummys[0].id = 29;
 
             string result = JSONEncoders.EncodeJsObjectArray(dummys);
-            result.Should().Be("[[29,\"mike\"],[5,\"dummy\"]]");
+            Assert.AreEqual("[[29,\"mike\"],[5,\"dummy\"]]", result);
         }
 
         [TestMethod]
@@ -66,7 +65,7 @@ namespace Echovoice.JSON.Tests
             dummys.Add(new dummyObject());
 
             string result = JSONEncoders.EncodeJsObjectList<dummyObject>(dummys);
-            result.Should().Be("[[29,\"mike\"],[5,\"dummy\"]]");
+            Assert.AreEqual("[[29,\"mike\"],[5,\"dummy\"]]", result);
         }
 
         [TestCleanup]

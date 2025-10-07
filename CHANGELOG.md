@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - 2025-10-06
+
+### Changed
+- **BREAKING**: Removed FluentAssertions dependency from test project
+- All test assertions now use standard MSTest assertion methods
+- Simplified testing infrastructure with zero third-party test dependencies
+- Maintained 98.31% line coverage and 97.71% branch coverage
+- Package size: 37KB
+
+### Technical Details
+- Converted ~150+ fluent assertions to standard MSTest format
+- All 28 tests passing with standard `Assert.AreEqual()`, `Assert.IsTrue()`, etc.
+- Test project now depends only on MSTest framework
+- No impact on library API or functionality - this is purely a test infrastructure change
+
 ## [2.0.0] - 2025-10-06
 
 ### Added

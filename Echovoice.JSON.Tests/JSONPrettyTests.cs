@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,16 +20,17 @@ namespace Echovoice.JSON.Tests
         [TestMethod]
         public void testComplexPretty()
         {
-            _complexPrettyPrintArrayInObjectExample.PrettyPrintJson().Should().Be
-            ("{" + NewLine +
-            "    \"CreatedDate\":  \"\\/Date(1262329200000)\\/\"," + NewLine +
-            "    \"Id\":  \"7df51e04-ca58-4804-82f6-e0af2f1d5265\"," + NewLine +
-            "    \"Names\":  [" + NewLine +
-            "        \"One\"," + NewLine +
-            "        \"Two\"," + NewLine +
-            "        \"Three\"" + NewLine +
-            "    ]" + NewLine +
-            "}");
+            string expected = "{" + NewLine +
+                "    \"CreatedDate\":  \"\\/Date(1262329200000)\\/\"," + NewLine +
+                "    \"Id\":  \"7df51e04-ca58-4804-82f6-e0af2f1d5265\"," + NewLine +
+                "    \"Names\":  [" + NewLine +
+                "        \"One\"," + NewLine +
+                "        \"Two\"," + NewLine +
+                "        \"Three\"" + NewLine +
+                "    ]" + NewLine +
+                "}";
+            
+            Assert.AreEqual(expected, _complexPrettyPrintArrayInObjectExample.PrettyPrintJson());
         }
 
         [TestMethod]
@@ -38,7 +38,7 @@ namespace Echovoice.JSON.Tests
         {
             string complexTestString = File.ReadAllText(Path.Combine("TestFiles", "example.json"));
 
-            _basicPrettyPrintArrayInObjectExample.PrettyPrintJson().Should().Be(complexTestString);
+            Assert.AreEqual(complexTestString, _basicPrettyPrintArrayInObjectExample.PrettyPrintJson());
         }
 
         

@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentAssertions;
 using System;
 
 namespace Echovoice.JSON.Tests
@@ -13,8 +12,8 @@ namespace Echovoice.JSON.Tests
             string input = "[]";
             string[] result = JSONDecoders.DecodeJSONArray(input);
             // Empty arrays return an array with one empty string element
-            result.Length.Should().Be(1);
-            result[0].Should().BeEmpty();
+            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(string.Empty, result[0]);
         }
 
         [TestMethod]
@@ -23,48 +22,48 @@ namespace Echovoice.JSON.Tests
             string input = "[]";
             string[] result = JSONDecoders.DecodeJsStringArray(input);
             // Empty arrays return an array with one empty string element
-            result.Length.Should().Be(1);
-            result[0].Should().BeEmpty();
+            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(string.Empty, result[0]);
         }
 
         [TestMethod]
         public void DecodeNullOrWhitespace()
         {
             string[]? result1 = JSONDecoders.DecodeJSONArray(null!);
-            result1.Should().BeEmpty();
+            Assert.AreEqual(0, result1.Length);
 
             string[] result2 = JSONDecoders.DecodeJSONArray("");
-            result2.Should().BeEmpty();
+            Assert.AreEqual(0, result2.Length);
 
             string[] result3 = JSONDecoders.DecodeJSONArray("   ");
-            result3.Should().BeEmpty();
+            Assert.AreEqual(0, result3.Length);
         }
 
         [TestMethod]
         public void EncodeNullArray()
         {
             string result = JSONEncoders.EncodeJsStringArray(null!);
-            result.Should().Be("[]");
+            Assert.AreEqual("[]", result);
 
             string result2 = JSONEncoders.EncodeJsObjectArray((string[]?)null);
-            result2.Should().Be("[]");
+            Assert.AreEqual("[]", result2);
 
             string result3 = JSONEncoders.EncodeJsObjectArray((object[]?)null);
-            result3.Should().Be("[]");
+            Assert.AreEqual("[]", result3);
         }
 
         [TestMethod]
         public void EncodeEmptyArray()
         {
             string result = JSONEncoders.EncodeJsStringArray(new string[] { });
-            result.Should().Be("[]");
+            Assert.AreEqual("[]", result);
         }
 
         [TestMethod]
         public void EncodeSingleElement()
         {
             string result = JSONEncoders.EncodeJsStringArray(new[] { "test" });
-            result.Should().Be("[\"test\"]");
+            Assert.AreEqual("[\"test\"]", result);
         }
 
         [TestMethod]
@@ -72,7 +71,7 @@ namespace Echovoice.JSON.Tests
         {
             string input = "\"\\\"quoted\\\"\"";
             string result = JSONDecoders.DecodeJsString(input);
-            result.Should().Be("\"quoted\"");
+            Assert.AreEqual("\"quoted\"", result);
         }
 
         [TestMethod]
@@ -80,7 +79,8 @@ namespace Echovoice.JSON.Tests
         {
             string input = "Line1\nLine2\tTabbed";
             string result = JSONEncoders.EncodeJsString(input);
-            result.Should().Contain("\\n").And.Contain("\\t");
+            Assert.IsTrue(result.Contains("\\n"));
+            Assert.IsTrue(result.Contains("\\t"));
         }
 
         [TestMethod]
@@ -88,7 +88,7 @@ namespace Echovoice.JSON.Tests
         {
             string input = "C:\\path\\to\\file";
             string result = JSONEncoders.EncodeJsString(input);
-            result.Should().Contain("\\\\");
+            Assert.IsTrue(result.Contains("\\\\"));
         }
 
         [TestMethod]
@@ -96,7 +96,7 @@ namespace Echovoice.JSON.Tests
         {
             string input = "http://example.com/path";
             string result = JSONEncoders.EncodeJsString(input);
-            result.Should().Contain("\\/");
+            Assert.IsTrue(result.Contains("\\/"));
         }
 
         [TestMethod]
@@ -104,7 +104,7 @@ namespace Echovoice.JSON.Tests
         {
             string s = "HelloWorld";
             string result = s.Slice(0, -5);
-            result.Should().Be("Hello");
+            Assert.AreEqual("Hello", result);
         }
 
         [TestMethod]
@@ -112,7 +112,7 @@ namespace Echovoice.JSON.Tests
         {
             string s = "0123456789";
             string result = s.Slice(2, 7);
-            result.Should().Be("23456");
+            Assert.AreEqual("23456", result);
         }
 
         [TestMethod]
@@ -120,8 +120,8 @@ namespace Echovoice.JSON.Tests
         {
             string input = "[{\"key\": \"value \\\"quoted\\\"\"}]";
             string[] result = JSONDecoders.DecodeJSONArray(input);
-            result.Length.Should().Be(1);
-            result[0].Should().Contain("quoted");
+            Assert.AreEqual(1, result.Length);
+            Assert.IsTrue(result[0].Contains("quoted"));
         }
 
         [TestMethod]
@@ -129,7 +129,9 @@ namespace Echovoice.JSON.Tests
         {
             string input = "Test\b\f\r";
             string result = JSONEncoders.EncodeJsString(input);
-            result.Should().Contain("\\b").And.Contain("\\f").And.Contain("\\r");
+            Assert.IsTrue(result.Contains("\\b"));
+            Assert.IsTrue(result.Contains("\\f"));
+            Assert.IsTrue(result.Contains("\\r"));
         }
 
         [TestMethod]
@@ -137,7 +139,7 @@ namespace Echovoice.JSON.Tests
         {
             string input = "Hello 世界";
             string result = JSONEncoders.EncodeJsString(input);
-            result.Should().Contain("\\u");
+            Assert.IsTrue(result.Contains("\\u"));
         }
 
         [TestMethod]
@@ -145,15 +147,15 @@ namespace Echovoice.JSON.Tests
         {
             string input = "[[[1,2],[3,4]],[[5,6],[7,8]]]";
             string[] result = JSONDecoders.DecodeJSONArray(input);
-            result.Length.Should().Be(2);
+            Assert.AreEqual(2, result.Length);
             
             string[] level2a = JSONDecoders.DecodeJSONArray(result[0]);
-            level2a.Length.Should().Be(2);
+            Assert.AreEqual(2, level2a.Length);
             
             string[] level3 = JSONDecoders.DecodeJSONArray(level2a[0]);
-            level3.Length.Should().Be(2);
-            level3[0].Should().Be("1");
-            level3[1].Should().Be("2");
+            Assert.AreEqual(2, level3.Length);
+            Assert.AreEqual("1", level3[0]);
+            Assert.AreEqual("2", level3[1]);
         }
     }
 }
